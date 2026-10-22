@@ -1,11 +1,16 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "dubbl",
+  "name": "gpqickbooks",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-03-01",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
+  },
+  "vars": {
+    "AUTH_SECRET": "XzS9WfL7VnK2mPqR4tB8yJ1hG6xS3aD9wM0zC5eU7iO",
+    "AUTH_TRUST_HOST": "true",
+    "NEXT_PUBLIC_APP_URL": "https://gpqickbooks.gayidancrispus.workers.dev"
   }
 }

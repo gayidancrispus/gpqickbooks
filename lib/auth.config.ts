@@ -3,6 +3,8 @@ import type { NextAuthConfig } from "next-auth";
 // Edge-safe auth config — no Node.js imports (no pg, bcrypt, drizzle)
 // Used by middleware. The full auth.ts extends this with adapter + authorize.
 export const authConfig: NextAuthConfig = {
+  secret: process.env.AUTH_SECRET || "XzS9WfL7VnK2mPqR4tB8yJ1hG6xS3aD9wM0zC5eU7iO",
+  trustHost: true,
   session: { strategy: "jwt" },
   pages: {
     signIn: "/sign-in",
