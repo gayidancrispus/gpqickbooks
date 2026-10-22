@@ -3,7 +3,9 @@ import pg from "pg";
 import * as schema from "./schema";
 
 const pool = new pg.Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString:
+    process.env.DATABASE_URL ||
+    "postgresql://postgres:203aeafc73b0b4c3b5fa4d5dda8038b2@sq79sv22.us-east.database.insforge.app:5432/insforge?sslmode=require",
   max: 10,
   idleTimeoutMillis: 60_000,
   connectionTimeoutMillis: 10_000,
