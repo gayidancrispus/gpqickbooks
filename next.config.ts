@@ -3,6 +3,7 @@ import { createMDX } from "fumadocs-mdx/next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  serverExternalPackages: ["pg-cloudflare"],
 };
 
 const withMDX = createMDX();
