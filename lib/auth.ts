@@ -44,8 +44,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth(async () => {
     : Apple({ allowDangerousEmailAccountLinking: true });
 
   return {
-  ...authConfig,
-  adapter: DrizzleAdapter(db, {
+    secret: process.env.AUTH_SECRET,
+    ...authConfig,
+    adapter: DrizzleAdapter(db, {
     usersTable: users,
     accountsTable: accounts,
     sessionsTable: sessions,
