@@ -87,5 +87,11 @@
     "typescript": "^5",
     "wrangler": "^4.151.3"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "workerd",
+      "esbuild"
+    ]
+  }
 }
