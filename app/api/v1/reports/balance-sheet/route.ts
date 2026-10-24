@@ -156,7 +156,7 @@ export async function GET(request: Request) {
         where: eq(organization.id, ctx.organizationId),
         columns: { defaultCurrency: true },
       });
-      const currency = org?.defaultCurrency || "USD";
+      const currency = org?.defaultCurrency || "UGX";
 
       const statement: Statement = hasComparatives
         ? {

@@ -194,7 +194,7 @@ export function OnboardingWizard() {
           name: orgName,
           country: selectedCountry?.name ?? null,
           countryCode: countryCode || null,
-          defaultCurrency: selectedCountry?.defaultCurrency ?? "USD",
+          defaultCurrency: selectedCountry?.defaultCurrency ?? "UGX",
           businessType: businessType || null,
           industrySector: industry || null,
           referralSource: finalReferral || null,

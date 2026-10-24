@@ -142,7 +142,7 @@ export default function DebitNoteDetailPage() {
 
   async function handleApply() {
     if (!orgId || !applyBillId) return;
-    const amount = decimalToMinorUnits(parseFloat(applyAmount) || 0, dn?.currencyCode || "USD");
+    const amount = decimalToMinorUnits(parseFloat(applyAmount) || 0, dn?.currencyCode || "UGX");
     if (!amount || amount <= 0) {
       toast.error("Enter a valid amount");
       return;

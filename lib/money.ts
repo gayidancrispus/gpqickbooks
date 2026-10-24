@@ -28,23 +28,23 @@ export function decimalToCents(value: string | number, decimals = 2): number {
  */
 export function decimalToMinorUnits(
   value: string | number,
-  currency = "USD"
+  currency = "UGX"
 ): number {
   return decimalToCents(value, getCurrencyMinorUnits(currency));
 }
 
-export function minorUnitsToDecimal(units: number, currency = "USD"): string {
+export function minorUnitsToDecimal(units: number, currency = "UGX"): string {
   return centsToDecimal(units, getCurrencyMinorUnits(currency));
 }
 
 /**
  * Format an integer minor-unit amount as a currency string.
  * Scales and sets fraction digits by the currency's real minor units, so
- * 1250 → "$12.50" (USD), 1250 → "¥1,250" (JPY), 1250 → "KWD 1.250" (KWD).
+ * 1250 → "UGX 1,250" (UGX), 1250 → "$12.50" (USD), 1250 → "¥1,250" (JPY).
  */
 export function formatMoney(
   cents: number,
-  currency = "USD",
+  currency = "UGX",
   locale = "en-US"
 ): string {
   const minorUnits = getCurrencyMinorUnits(currency);

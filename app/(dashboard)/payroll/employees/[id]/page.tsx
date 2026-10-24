@@ -132,7 +132,7 @@ export default function EmployeeDetailPage() {
   const [isActive, setIsActive] = useState(true);
   const [compensationType, setCompensationType] = useState("salary");
   const [hourlyRate, setHourlyRate] = useState("");
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("UGX");
   useDocumentTitle("Payroll · Employee Details");
 
   const orgId =
@@ -163,7 +163,7 @@ export default function EmployeeDetailPage() {
           setIsActive(e.isActive);
           setCompensationType(e.compensationType || "salary");
           setHourlyRate(e.hourlyRate ? (e.hourlyRate / 100).toFixed(2) : "");
-          setCurrency(e.currency || "USD");
+          setCurrency(e.currency || "UGX");
         }
       })
       .finally(() => setLoading(false));

@@ -161,8 +161,8 @@ export function registerPurchasingTools(server: McpServer, ctx: AuthContext) {
       currencyCode: z
         .string()
         .optional()
-        .default("USD")
-        .describe("Currency code (ISO 4217, e.g. USD)"),
+        .default("UGX")
+        .describe("Currency code (ISO 4217, e.g. UGX)"),
       lines: z
         .array(
           z.object({

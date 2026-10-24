@@ -50,31 +50,49 @@ export function FileUploader({
         // file is attached to (and listed against) the given entity; everything
         // else uses the legacy un-linked attachment endpoint.
         const linked = !!(entityType && entityId);
-        const presignRes = await fetch(
-          linked ? "/api/v1/documents" : "/api/v1/attachments/presign",
-          {
+
+        if (linked) {
+          const formData = new FormData();
+          formData.append("file", file);
+          formData.append("fileName", file.name);
+          formData.append("entityType", entityType!);
+          formData.append("entityId", entityId!);
+
+          const res = await fetch("/api/v1/documents", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
               "x-organization-id": orgId,
             },
-            body: JSON.stringify(
-              linked
-                ? {
-                    fileName: file.name,
-                    mimeType: file.type || "application/octet-stream",
-                    fileSize: file.size,
-                    entityType,
-                    entityId,
-                  }
-                : {
-                    fileName: file.name,
-                    contentType: file.type,
-                    fileSize: file.size,
-                  }
-            ),
+            body: formData,
+          });
+
+          if (!res.ok) {
+            const errData = await res.json().catch(() => ({}));
+            throw new Error(errData.error || "Failed to upload file");
           }
-        );
+
+          const json = await res.json();
+          const fileKey = json.document?.fileKey;
+          const documentId = json.document?.id;
+
+          onUpload(fileKey, file.name);
+          if (documentId) onAttached?.(documentId, file.name);
+          toast.success("File uploaded");
+          return;
+        }
+
+        const presignRes = await fetch("/api/v1/attachments/presign", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-organization-id": orgId,
+          },
+          body: JSON.stringify({
+            fileName: file.name,
+            contentType: file.type,
+            fileSize: file.size,
+          }),
+        });
 
         if (!presignRes.ok) {
           throw new Error("Failed to get upload URL");

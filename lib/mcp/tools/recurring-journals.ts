@@ -112,8 +112,8 @@ export function registerRecurringJournalTools(server: McpServer, ctx: AuthContex
       currencyCode: z
         .string()
         .optional()
-        .default("USD")
-        .describe("Currency code for the posted legs (default USD)"),
+        .default("UGX")
+        .describe("Currency code for the posted legs (default UGX)"),
       lines: z
         .array(
           z.object({
@@ -173,7 +173,7 @@ export function registerRecurringJournalTools(server: McpServer, ctx: AuthContex
             maxOccurrences: params.maxOccurrences || null,
             reference: params.reference || null,
             notes: params.notes || null,
-            currencyCode: params.currencyCode ?? "USD",
+            currencyCode: params.currencyCode ?? "UGX",
             createdBy: ctx.userId,
           })
           .returning();

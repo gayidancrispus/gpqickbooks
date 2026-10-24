@@ -30,6 +30,7 @@ const EXCLUDED = new Set([
  * (very old runtimes). Minor units are hand-checked for the non-2 exceptions.
  */
 const FALLBACK: IsoCurrency[] = [
+  { code: "UGX", name: "Ugandan Shilling", symbol: "USh", decimalPlaces: 0 },
   { code: "USD", name: "US Dollar", symbol: "$", decimalPlaces: 2 },
   { code: "EUR", name: "Euro", symbol: "€", decimalPlaces: 2 },
   { code: "GBP", name: "British Pound", symbol: "£", decimalPlaces: 2 },

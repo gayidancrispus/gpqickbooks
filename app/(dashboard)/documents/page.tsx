@@ -249,30 +249,28 @@ export default function DocumentsPage() {
     setUploading(true);
     setUploadDialogOpen(false);
     try {
+      const orgId = localStorage.getItem("activeOrgId") || "";
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
         const fileName = uploadNames[i]?.trim() || file.name;
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("fileName", fileName);
+        if (currentFolder) formData.append("folderId", currentFolder);
+        formData.append("visibility", visibility);
+
+        const headers: Record<string, string> = {};
+        if (orgId) headers["x-organization-id"] = orgId;
+
         const res = await fetch("/api/v1/documents", {
           method: "POST",
-          headers: getHeaders(),
-          body: JSON.stringify({
-            fileName,
-            fileSize: file.size,
-            mimeType: file.type || "application/octet-stream",
-            folderId: currentFolder,
-            visibility,
-          }),
+          headers,
+          body: formData,
         });
         if (!res.ok) {
           const data = await res.json().catch(() => ({}));
           throw new Error(data.error || `Failed to upload ${file.name}`);
         }
-        const { uploadUrl } = await res.json();
-        await fetch(uploadUrl, {
-          method: "PUT",
-          headers: { "Content-Type": file.type || "application/octet-stream" },
-          body: file,
-        });
       }
       await fetchData();
       toast.success(files.length === 1 ? "File uploaded" : `${files.length} files uploaded`);

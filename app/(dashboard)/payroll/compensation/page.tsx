@@ -117,7 +117,7 @@ export default function CompensationPage() {
 
   const [bandSheet, setBandSheet] = useState(false);
   const [bandSaving, setBandSaving] = useState(false);
-  const [newBand, setNewBand] = useState({ name: "", level: "", minSalary: "", midSalary: "", maxSalary: "", currency: "USD" });
+  const [newBand, setNewBand] = useState({ name: "", level: "", minSalary: "", midSalary: "", maxSalary: "", currency: "UGX" });
 
   const [reviewSheet, setReviewSheet] = useState(false);
   const [reviewSaving, setReviewSaving] = useState(false);
@@ -213,7 +213,7 @@ export default function CompensationPage() {
       if (res.ok) {
         toast.success("Band added");
         setBandSheet(false);
-        setNewBand({ name: "", level: "", minSalary: "", midSalary: "", maxSalary: "", currency: "USD" });
+        setNewBand({ name: "", level: "", minSalary: "", midSalary: "", maxSalary: "", currency: "UGX" });
         fetchData();
       }
     } catch {

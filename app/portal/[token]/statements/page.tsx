@@ -27,7 +27,7 @@ interface StatementLine {
 function formatMoney(cents: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
-    currency: "USD",
+    currency: "UGX",
   }).format(cents / 100);
 }
 

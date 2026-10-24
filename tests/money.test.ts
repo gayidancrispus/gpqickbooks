@@ -29,9 +29,9 @@ test("decimalToMinorUnits scales by the currency's real minor units", () => {
   assert.equal(decimalToMinorUnits("1.234", "KWD"), 1234); // 3 dp
 });
 
-test("decimalToMinorUnits defaults to 2 decimals for unknown/USD", () => {
+test("decimalToMinorUnits defaults to UGX (0 decimals)", () => {
   assert.equal(decimalToMinorUnits("5", "USD"), 500);
-  assert.equal(decimalToMinorUnits(5), 500);
+  assert.equal(decimalToMinorUnits(5), 5);
 });
 
 test("minorUnitsToDecimal is the inverse of decimalToMinorUnits", () => {

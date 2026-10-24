@@ -359,8 +359,8 @@ export function registerQuoteTools(server: McpServer, ctx: AuthContext) {
       currencyCode: z
         .string()
         .optional()
-        .default("USD")
-        .describe("Currency code (defaults to USD)"),
+        .default("UGX")
+        .describe("Currency code (defaults to UGX)"),
       priceListId: z
         .string()
         .optional()

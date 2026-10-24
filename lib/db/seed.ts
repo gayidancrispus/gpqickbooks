@@ -200,7 +200,7 @@ async function seed() {
         id: "00000000-0000-0000-0000-000000000002",
         name: "Demo Company",
         slug: "demo-company",
-        defaultCurrency: "USD",
+        defaultCurrency: "UGX",
         fiscalYearStartMonth: 1,
       })
       .returning();
@@ -471,7 +471,7 @@ async function seed() {
         total: lineAmount,
         amountPaid: inv.paid,
         amountDue: lineAmount - inv.paid,
-        currencyCode: "USD",
+        currencyCode: "UGX",
       })
       .returning();
 
@@ -554,7 +554,7 @@ async function seed() {
         total: cn.total,
         amountApplied: cn.amountApplied,
         amountRemaining: cn.amountRemaining,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
         sentAt: cn.status !== "draft" ? new Date(cn.date) : undefined,
       })
@@ -610,7 +610,7 @@ async function seed() {
         total: b.amount,
         amountPaid: b.paid,
         amountDue: b.amount - b.paid,
-        currencyCode: "USD",
+        currencyCode: "UGX",
       })
       .returning();
 
@@ -643,7 +643,7 @@ async function seed() {
       accountName: "Business Checking",
       accountNumber: "****4567",
       bankName: "First National Bank",
-      currencyCode: "USD",
+      currencyCode: "UGX",
       chartAccountId: accountMap.get("1100")!,
       balance: 5000000,
     })
@@ -656,7 +656,7 @@ async function seed() {
       accountName: "Business Savings",
       accountNumber: "****8901",
       bankName: "First National Bank",
-      currencyCode: "USD",
+      currencyCode: "UGX",
       chartAccountId: accountMap.get("1110")!,
       balance: 2500000,
     });
@@ -668,7 +668,7 @@ async function seed() {
       accountName: "Business Credit Card",
       accountNumber: "****2345",
       bankName: "Capital One",
-      currencyCode: "USD",
+      currencyCode: "UGX",
       chartAccountId: accountMap.get("2600")!,
       balance: -125000,
     });
@@ -727,7 +727,7 @@ async function seed() {
         method: payNum % 2 === 0 ? "bank_transfer" : "card",
         reference: `REF-${payNum}`,
         bankAccountId: checkingBank.id,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
       })
       .returning();
@@ -754,7 +754,7 @@ async function seed() {
         method: "bank_transfer",
         reference: `CHK-${payNum}`,
         bankAccountId: checkingBank.id,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
       })
       .returning();
@@ -791,7 +791,7 @@ async function seed() {
         lastRunDate: "2026-02-01",
         occurrencesGenerated: 2,
         status: "active",
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
       })
       .returning();
@@ -1200,7 +1200,7 @@ async function seed() {
       submittedBy: userId,
       status: "approved",
       totalAmount: 85000,
-      currencyCode: "USD",
+      currencyCode: "UGX",
       submittedAt: new Date("2026-01-28"),
       approvedAt: new Date("2026-01-30"),
       approvedBy: userId,
@@ -1246,7 +1246,7 @@ async function seed() {
       submittedBy: userId,
       status: "submitted",
       totalAmount: 15900,
-      currencyCode: "USD",
+      currencyCode: "UGX",
       submittedAt: new Date("2026-02-15"),
     })
     .returning();
@@ -1778,7 +1778,7 @@ async function seed() {
         subtotal: q.price,
         taxTotal: 0,
         total: q.price,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
         sentAt: q.status !== "draft" ? new Date(q.date) : undefined,
       }).returning();
@@ -1831,7 +1831,7 @@ async function seed() {
         subtotal: po.amount,
         taxTotal: 0,
         total: po.amount,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         createdBy: userId,
         sentAt: po.status !== "draft" ? new Date(po.date) : undefined,
       }).returning();
@@ -1882,7 +1882,7 @@ async function seed() {
           total: dn.amount,
           amountApplied: 0,
           amountRemaining: dn.amount,
-          currencyCode: "USD",
+          currencyCode: "UGX",
           createdBy: userId,
           sentAt: dn.status !== "draft" ? new Date(dn.date) : undefined,
         }).returning();
@@ -2011,7 +2011,7 @@ async function seed() {
         contactId: allContacts2[d.contact].id,
         title: d.title,
         valueCents: d.value,
-        currency: "USD",
+        currency: "UGX",
         probability: d.prob,
         expectedCloseDate: d.close,
         assignedTo: userId,
@@ -2325,7 +2325,7 @@ async function seed() {
         billId: b.id,
         contactId: b.contactId,
         amount: b.amountDue,
-        currencyCode: "USD",
+        currencyCode: "UGX",
         scheduledDate: b.dueDate,
         status: "pending",
         notes: `Scheduled payment for ${b.billNumber}`,
@@ -2345,7 +2345,7 @@ async function seed() {
       defaultTaxRate: 2200,
       overtimeThresholdHours: 40,
       overtimeMultiplier: 1.5,
-      defaultCurrency: "USD",
+      defaultCurrency: "UGX",
       salaryExpenseAccountCode: "5100",
       taxPayableAccountCode: "2200",
       bankAccountCode: "1100",

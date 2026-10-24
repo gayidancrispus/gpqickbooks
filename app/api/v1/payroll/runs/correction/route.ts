@@ -78,7 +78,7 @@ export async function POST(request: Request) {
       itemEmp.set(it.id, it.employeeId);
       const agg = parentByEmp.get(it.employeeId) ?? {
         gross: 0,
-        currency: it.currency ?? "USD",
+        currency: it.currency ?? "UGX",
         fxRate: it.fxRate ?? 1,
         breakdown: [],
         employerBreakdown: [],
@@ -131,7 +131,7 @@ export async function POST(request: Request) {
       let employerTaxBreakdown: EmployerTaxLine[] = [];
       let taxAmount = 0;
       // Match the parent's currency so postPayrollRun converts consistently.
-      let currency = "USD";
+      let currency = "UGX";
       let fxRate = 1;
 
       if (parentAgg && parentAgg.gross !== 0) {

@@ -63,6 +63,7 @@ export const COUNTRIES: Country[] = [
   { code: "IL", name: "Israel", flag: "\u{1F1EE}\u{1F1F1}", defaultCurrency: "ILS" },
 
   // Africa
+  { code: "UG", name: "Uganda", flag: "\u{1F1FA}\u{1F1EC}", defaultCurrency: "UGX" },
   { code: "ZA", name: "South Africa", flag: "\u{1F1FF}\u{1F1E6}", defaultCurrency: "ZAR" },
   { code: "NG", name: "Nigeria", flag: "\u{1F1F3}\u{1F1EC}", defaultCurrency: "NGN" },
   { code: "KE", name: "Kenya", flag: "\u{1F1F0}\u{1F1EA}", defaultCurrency: "KES" },

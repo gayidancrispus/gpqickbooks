@@ -2380,14 +2380,14 @@ function EmployeeDrawer({ open, onClose }: { open: boolean; onClose: () => void 
   const [taxRate, setTaxRate] = useState("20");
   const [bankAccountNumber, setBankAccountNumber] = useState("");
   const [empStartDate, setEmpStartDate] = useState(new Date().toISOString().split("T")[0]);
-  const [empCurrency, setEmpCurrency] = useState("USD");
+  const [empCurrency, setEmpCurrency] = useState("UGX");
 
   useEffect(() => {
     if (!open) {
       setEmpName(""); setEmail(""); setEmployeeNumber(""); setPosition("");
       setSalary(""); setPayFrequency("monthly"); setTaxRate("20");
       setBankAccountNumber(""); setEmpStartDate(new Date().toISOString().split("T")[0]);
-      setEmpCurrency("USD");
+      setEmpCurrency("UGX");
     }
   }, [open]);
 
@@ -2806,9 +2806,9 @@ function RecurringDrawer({ open, onClose }: { open: boolean; onClose: () => void
 // ---------------------------------------------------------------------------
 function AccountDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
   const [saving, setSaving] = useState(false);
-  const [acctCurrency, setAcctCurrency] = useState("USD");
+  const [acctCurrency, setAcctCurrency] = useState("UGX");
 
-  useEffect(() => { if (!open) setAcctCurrency("USD"); }, [open]);
+  useEffect(() => { if (!open) setAcctCurrency("UGX"); }, [open]);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -2925,7 +2925,7 @@ function BankAccountDrawer({ open, onClose }: { open: boolean; onClose: () => vo
   const [bankName, setBankName] = useState("");
   const [accountNumber, setAccountNumber] = useState("");
   const [accountType, setAccountType] = useState("checking");
-  const [currencyCode, setCurrencyCode] = useState("USD");
+  const [currencyCode, setCurrencyCode] = useState("UGX");
   const [countryCode, setCountryCode] = useState("");
   const [color, setColor] = useState(BANK_ACCOUNT_COLORS[0]);
   // Optional: connect to a specific ledger account. Left blank, the account is
@@ -2935,7 +2935,7 @@ function BankAccountDrawer({ open, onClose }: { open: boolean; onClose: () => vo
   useEffect(() => {
     if (!open) {
       setAccountName(""); setBankName(""); setAccountNumber("");
-      setAccountType("checking"); setCurrencyCode("USD"); setCountryCode("");
+      setAccountType("checking"); setCurrencyCode("UGX"); setCountryCode("");
       setColor(BANK_ACCOUNT_COLORS[0]); setChartAccountId("");
     }
   }, [open]);
@@ -3636,11 +3636,11 @@ function ContractorDrawer({ open, onClose }: { open: boolean; onClose: () => voi
   const [cEmail, setCEmail] = useState("");
   const [cCompany, setCCompany] = useState("");
   const [cRate, setCRate] = useState("");
-  const [cCurrency, setCCurrency] = useState("USD");
+  const [cCurrency, setCCurrency] = useState("UGX");
 
   useEffect(() => {
     if (!open) {
-      setCName(""); setCEmail(""); setCCompany(""); setCRate(""); setCCurrency("USD");
+      setCName(""); setCEmail(""); setCCompany(""); setCRate(""); setCCurrency("UGX");
     }
   }, [open]);
 
@@ -3817,7 +3817,7 @@ function DealDrawer({ open, onClose, initialData }: { open: boolean; onClose: ()
           contactId: contactId || undefined,
           title,
           valueCents: value ? Math.round(parseFloat(value) * 100) : 0,
-          currency: "USD",
+          currency: "UGX",
           probability: probability ? parseInt(probability) : null,
           expectedCloseDate: expectedClose || null,
           source: source || null,
@@ -4115,7 +4115,7 @@ function CustomerCreditDrawer({ open, onClose }: { open: boolean; onClose: () =>
     e.preventDefault();
     if (!contactId) { toast.error("Please select a customer"); return; }
     if (!bankAccountId) { toast.error("Please choose where the money was paid in"); return; }
-    const cents = decimalToMinorUnits(amount, currencyCode || "USD");
+    const cents = decimalToMinorUnits(amount, currencyCode || "UGX");
     if (cents <= 0) { toast.error("Please enter an amount"); return; }
     setSaving(true);
     const orgId = localStorage.getItem("activeOrgId");

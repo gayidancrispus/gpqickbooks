@@ -4,7 +4,7 @@ import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { SignatureCanvas } from "./signature-canvas";
 
-function fmtMoney(cents: number, currency = "USD") {
+function fmtMoney(cents: number, currency = "UGX") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
@@ -29,7 +29,7 @@ export default async function SignPage({
   const isSigned = sig.status === "signed";
   const isDeclined = sig.status === "declined";
   const inv = sig.invoice;
-  const currency = inv.currencyCode || "USD";
+  const currency = inv.currencyCode || "UGX";
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950 flex items-center justify-center p-4">

@@ -47,7 +47,7 @@ interface LandedCostDetail {
 }
 
 const formatMoney = (cents: number) =>
-  (cents / 100).toLocaleString("en-US", { style: "currency", currency: "USD" });
+  (cents / 100).toLocaleString("en-US", { style: "currency", currency: "UGX" });
 
 export default function LandedCostDetailPage() {
   const { id } = useParams<{ id: string }>();

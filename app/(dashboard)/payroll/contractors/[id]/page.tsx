@@ -99,7 +99,7 @@ export default function ContractorDetailPage() {
           setCompany(c.company || "");
           setHourlyRate(c.hourlyRate ? (c.hourlyRate / 100).toFixed(2) : "");
           setBankAccount(c.bankAccountNumber || "");
-          setPaymentCurrency(c.currency || "USD");
+          setPaymentCurrency(c.currency || "UGX");
         }
       })
       .finally(() => setLoading(false));
@@ -136,7 +136,7 @@ export default function ContractorDetailPage() {
       headers: { "Content-Type": "application/json", "x-organization-id": orgId },
       body: JSON.stringify({
         amount: Math.round(parseFloat(paymentAmount) * 100),
-        currency: paymentCurrency || contractor?.currency || "USD",
+        currency: paymentCurrency || contractor?.currency || "UGX",
         description: paymentDesc || undefined,
         invoiceNumber: paymentInvoice || undefined,
       }),
@@ -213,7 +213,7 @@ export default function ContractorDetailPage() {
         <div>
           <div className="flex items-center gap-2">
             <h1 className="text-lg font-semibold">{contractor.name}</h1>
-            {contractor.currency && contractor.currency !== "USD" && (
+            {contractor.currency && contractor.currency !== "UGX" && (
               <code className="rounded bg-muted px-1.5 py-0.5 text-[11px] font-medium text-muted-foreground">{contractor.currency}</code>
             )}
           </div>
@@ -290,7 +290,7 @@ export default function ContractorDetailPage() {
                 {(contractor.payments || []).map((p) => (
                   <div key={p.id} className="flex items-center justify-between px-4 py-2.5">
                     <div>
-                      <p className="text-sm font-medium font-mono tabular-nums">{formatMoney(p.amount, contractor.currency || "USD")}</p>
+                      <p className="text-sm font-medium font-mono tabular-nums">{formatMoney(p.amount, contractor.currency || "UGX")}</p>
                       <p className="text-xs text-muted-foreground">{p.description || p.invoiceNumber || "-"}</p>
                     </div>
                     <div className="flex items-center gap-2">

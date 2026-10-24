@@ -385,9 +385,9 @@ export default function TaxPeriodDetailPage() {
               {netAmount == null
                 ? "Record the payment to, or refund from, the tax office."
                 : netAmount < 0
-                  ? `You should receive ${formatMoney(Math.abs(netAmount), "USD")} back from the tax office.`
+                  ? `You should receive ${formatMoney(Math.abs(netAmount), "UGX")} back from the tax office.`
                   : netAmount > 0
-                    ? `You owe ${formatMoney(netAmount, "USD")} to the tax office.`
+                    ? `You owe ${formatMoney(netAmount, "UGX")} to the tax office.`
                     : "Nothing to pay or reclaim for this return."}
             </p>
           </div>
@@ -447,7 +447,7 @@ export default function TaxPeriodDetailPage() {
                         )}
                       </td>
                       <td className="px-4 py-2.5 text-right font-mono tabular-nums">
-                        {formatMoney(line.amount, "USD")}
+                        {formatMoney(line.amount, "UGX")}
                       </td>
                     </tr>
                   );

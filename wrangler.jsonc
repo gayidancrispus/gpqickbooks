@@ -12,6 +12,8 @@
     "DATABASE_URL": "postgresql://postgres:203aeafc73b0b4c3b5fa4d5dda8038b2@sq79sv22.us-east.database.insforge.app:5432/insforge?sslmode=require",
     "AUTH_SECRET": "XzS9WfL7VnK2mPqR4tB8yJ1hG6xS3aD9wM0zC5eU7iO",
     "AUTH_TRUST_HOST": "true",
-    "NEXT_PUBLIC_APP_URL": "https://gpqickbooks.gayidancrispus.workers.dev"
+    "NEXT_PUBLIC_APP_URL": "https://gpqickbooks.gayidancrispus.workers.dev",
+    "S3_BUCKET": "dubbl",
+    "S3_REGION": "us-east-1"
   }
 }

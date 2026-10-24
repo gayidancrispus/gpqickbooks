@@ -72,7 +72,7 @@ export default function SettingsPage() {
     name: "",
     country: "" as string,
     businessType: "" as string,
-    defaultCurrency: "USD",
+    defaultCurrency: "UGX",
     fiscalYearStartMonth: "1",
     countryCode: "",
     taxId: "",

@@ -23,7 +23,7 @@ interface Quote {
   currencyCode: string;
 }
 
-function formatMoney(cents: number, currency = "USD") {
+function formatMoney(cents: number, currency = "UGX") {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,

@@ -116,7 +116,7 @@ export default function PayrollSettingsPage() {
     defaultTaxRate: 2000,
     overtimeThresholdHours: 40,
     overtimeMultiplier: 1.5,
-    defaultCurrency: "USD",
+    defaultCurrency: "UGX",
     salaryExpenseAccountCode: "5100",
     taxPayableAccountCode: "2200",
     bankAccountCode: "1100",

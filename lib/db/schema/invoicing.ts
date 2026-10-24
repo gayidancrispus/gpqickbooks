@@ -96,7 +96,7 @@ export const invoice = pgTable("invoice", {
   total: integer("total").notNull().default(0),
   amountPaid: integer("amount_paid").notNull().default(0),
   amountDue: integer("amount_due").notNull().default(0),
-  currencyCode: text("currency_code").notNull().default("USD"),
+  currencyCode: text("currency_code").notNull().default("UGX"),
   senderSnapshot: jsonb("sender_snapshot"),
   recipientSnapshot: jsonb("recipient_snapshot"),
   paymentLinkToken: text("payment_link_token").unique(),
@@ -157,7 +157,7 @@ export const quote = pgTable("quote", {
   taxTotal: integer("tax_total").notNull().default(0),
   total: integer("total").notNull().default(0),
   billedTotal: integer("billed_total").notNull().default(0), // cents already invoiced via progress/milestone billing
-  currencyCode: text("currency_code").notNull().default("USD"),
+  currencyCode: text("currency_code").notNull().default("UGX"),
   convertedInvoiceId: uuid("converted_invoice_id"),
   sentAt: timestamp("sent_at", { mode: "date" }),
   createdBy: uuid("created_by").references(() => users.id),
@@ -208,7 +208,7 @@ export const creditNote = pgTable("credit_note", {
   total: integer("total").notNull().default(0),
   amountApplied: integer("amount_applied").notNull().default(0),
   amountRemaining: integer("amount_remaining").notNull().default(0),
-  currencyCode: text("currency_code").notNull().default("USD"),
+  currencyCode: text("currency_code").notNull().default("UGX"),
   journalEntryId: uuid("journal_entry_id").references(() => journalEntry.id),
   sentAt: timestamp("sent_at", { mode: "date" }),
   voidedAt: timestamp("voided_at", { mode: "date" }),
@@ -257,7 +257,7 @@ export const salesReceipt = pgTable("sales_receipt", {
   subtotal: integer("subtotal").notNull().default(0),
   taxTotal: integer("tax_total").notNull().default(0),
   total: integer("total").notNull().default(0),
-  currencyCode: text("currency_code").notNull().default("USD"),
+  currencyCode: text("currency_code").notNull().default("UGX"),
   // Money lands in a bank account (preferred) or, failing that, a chart-of-accounts deposit account.
   bankAccountId: uuid("bank_account_id").references(() => bankAccount.id),
   depositAccountId: uuid("deposit_account_id").references(() => chartAccount.id),
@@ -305,7 +305,7 @@ export const customerCredit = pgTable("customer_credit", {
     .notNull()
     .references(() => contact.id),
   date: date("date").notNull(),
-  currencyCode: text("currency_code").notNull().default("USD"),
+  currencyCode: text("currency_code").notNull().default("UGX"),
   originalAmount: integer("original_amount").notNull().default(0), // cents
   amountRemaining: integer("amount_remaining").notNull().default(0), // cents unapplied/available
   sourceType: customerCreditSourceEnum("source_type").notNull(),

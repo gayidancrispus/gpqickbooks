@@ -119,7 +119,7 @@ export default function AccountDetailLayout({ children }: { children: React.Reac
   }
 
   const bal = parseFloat(account.balance || "0");
-  const cur = account.currencyCode || "USD";
+  const cur = account.currencyCode || "UGX";
   const typeConfig = TYPE_CONFIG[account.type];
   const totalDebits = account.totalDebits || 0;
   const totalCredits = account.totalCredits || 0;

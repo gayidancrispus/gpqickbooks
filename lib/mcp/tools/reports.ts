@@ -936,7 +936,7 @@ export function registerReportTools(server: McpServer, ctx: AuthContext) {
           where: eq(organization.id, ctx.organizationId),
           columns: { defaultCurrency: true },
         });
-        const currency = org?.defaultCurrency || "USD";
+        const currency = org?.defaultCurrency || "UGX";
 
         let statement: Statement;
         let baseName: string;
@@ -1543,7 +1543,7 @@ export function registerReportTools(server: McpServer, ctx: AuthContext) {
           where: eq(organization.id, ctx.organizationId),
           columns: { defaultCurrency: true },
         });
-        const currency = org?.defaultCurrency || "USD";
+        const currency = org?.defaultCurrency || "UGX";
 
         const CASH_SUBTYPES = ["bank"];
         const sumCash = (aggs: AccountAggregate[]) =>

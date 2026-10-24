@@ -33,9 +33,16 @@ export const authConfig: NextAuthConfig = {
         return Response.redirect(new URL("/dashboard", request.nextUrl.origin));
       }
 
+      // Redirect root path directly to sign-in or dashboard
+      if (pathname === "/") {
+        if (isLoggedIn) {
+          return Response.redirect(new URL("/dashboard", request.nextUrl.origin));
+        }
+        return Response.redirect(new URL("/sign-in", request.nextUrl.origin));
+      }
+
       // Public routes
       if (
-        pathname === "/" ||
         pathname.startsWith("/pricing") ||
         pathname.startsWith("/sign-in") ||
         pathname.startsWith("/sign-up") ||

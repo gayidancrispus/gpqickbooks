@@ -107,7 +107,7 @@ export async function POST(
               invoiceNumber: found.invoiceNumber,
               issueDate: found.issueDate,
               dueDate: found.dueDate,
-              currencyCode: "USD",
+              currencyCode: "UGX",
               lines: found.lines.map((l) => ({
                 description: l.description,
                 quantity: l.quantity,

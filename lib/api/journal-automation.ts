@@ -40,7 +40,7 @@ export async function resolveBaseRate(
     where: eq(organization.id, organizationId),
     columns: { defaultCurrency: true },
   });
-  const base = org?.defaultCurrency ?? "USD";
+  const base = org?.defaultCurrency ?? "UGX";
   const currency = currencyCode ?? base;
   if (currency === base) return { base, currency, rate: RATE_SCALE };
   const rate = await getExchangeRate(organizationId, currency, base, date);
@@ -64,7 +64,7 @@ export async function assertBaseRateAvailable(
     where: eq(organization.id, organizationId),
     columns: { defaultCurrency: true },
   });
-  const base = org?.defaultCurrency ?? "USD";
+  const base = org?.defaultCurrency ?? "UGX";
   const currency = currencyCode ?? base;
   if (currency === base) return;
   const rate = await getExchangeRate(organizationId, currency, base, date);
@@ -991,7 +991,7 @@ export async function createPaymentJournalEntry(
       where: eq(organization.id, ctx.organizationId),
       columns: { defaultCurrency: true },
     });
-    const base = org?.defaultCurrency ?? "USD";
+    const base = org?.defaultCurrency ?? "UGX";
 
     let bankTotal = 0;
     let counterTotal = 0;
@@ -1400,7 +1400,7 @@ export async function mapBillLinesForPosting(
       where: eq(organization.id, organizationId),
       columns: { defaultCurrency: true },
     });
-    const inv = await ensureControlAccount(organizationId, "inventory", org?.defaultCurrency ?? "USD");
+    const inv = await ensureControlAccount(organizationId, "inventory", org?.defaultCurrency ?? "UGX");
     inventoryFallbackId = inv?.id ?? null;
   }
   const out: { accountId: string | null; amount: number; taxAmount: number; taxRateId?: string | null }[] = [];
@@ -1655,7 +1655,7 @@ export async function createVatReturnClearingJournalEntry(
     where: eq(organization.id, ctx.organizationId),
     columns: { defaultCurrency: true },
   });
-  const base = org?.defaultCurrency ?? "USD";
+  const base = org?.defaultCurrency ?? "UGX";
 
   const outputAcct = await ensureControlAccount(ctx.organizationId, "outputVat", base, tx);
   const inputAcct = await ensureControlAccount(ctx.organizationId, "inputVat", base, tx);
@@ -1790,7 +1790,7 @@ export async function recordTaxSettlementJournalEntry(
     where: eq(organization.id, ctx.organizationId),
     columns: { defaultCurrency: true },
   });
-  const base = org?.defaultCurrency ?? "USD";
+  const base = org?.defaultCurrency ?? "UGX";
 
   const suspenseAcct = await ensureControlAccount(ctx.organizationId, "vatSuspense", base, tx);
   if (!suspenseAcct) return null;

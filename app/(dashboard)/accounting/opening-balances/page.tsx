@@ -46,7 +46,7 @@ export default function OpeningBalancesPage() {
   const totalDebit = entry?.lines.reduce((sum, l) => sum + l.debitAmount, 0) ?? 0;
   const totalCredit = entry?.lines.reduce((sum, l) => sum + l.creditAmount, 0) ?? 0;
   // Opening balances always use the org's home currency.
-  const currencyCode = "USD";
+  const currencyCode = "UGX";
 
   return (
     <div className="space-y-6">

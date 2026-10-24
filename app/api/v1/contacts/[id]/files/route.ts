@@ -4,8 +4,8 @@ import { eq, and, desc, or } from "drizzle-orm";
 import { getAuthContext } from "@/lib/api/auth-context";
 import { parsePagination, paginatedResponse } from "@/lib/api/pagination";
 import { notDeleted } from "@/lib/db/soft-delete";
-import { ok, created, notFound, handleError } from "@/lib/api/response";
-import { getUploadUrl } from "@/lib/s3";
+import { ok, created, notFound, validationError, handleError } from "@/lib/api/response";
+import { getUploadUrl, uploadObject } from "@/lib/s3";
 import { checkStorageLimit } from "@/lib/api/check-limit";
 import { z } from "zod";
 
@@ -65,8 +65,6 @@ export async function POST(
   try {
     const { id: contactId } = await params;
     const ctx = await getAuthContext(request);
-    const body = await request.json();
-    const parsed = uploadSchema.parse(body);
 
     const ct = await db.query.contact.findFirst({
       where: and(
@@ -76,6 +74,45 @@ export async function POST(
       ),
     });
     if (!ct) return notFound("Contact");
+
+    const contentType = request.headers.get("content-type") || "";
+    if (contentType.includes("multipart/form-data")) {
+      const formData = await request.formData();
+      const file = formData.get("file") as File | null;
+      if (!file) return validationError("No file provided");
+
+      const fileName =
+        (formData.get("fileName") as string)?.trim() || file.name || "document";
+      const rawVisibility = formData.get("visibility") as string | null;
+      const visibility = rawVisibility === "private" ? ("private" as const) : ("organization" as const);
+      const mimeType = file.type || "application/octet-stream";
+      const fileSize = file.size;
+
+      await checkStorageLimit(ctx.organizationId, fileSize);
+
+      const fileKey = `documents/${ctx.organizationId}/${Date.now()}-${fileName}`;
+      await uploadObject(fileKey, Buffer.from(await file.arrayBuffer()), mimeType);
+
+      const [doc] = await db
+        .insert(document)
+        .values({
+          organizationId: ctx.organizationId,
+          fileName,
+          fileKey,
+          fileSize,
+          mimeType,
+          entityType: "contact",
+          entityId: contactId,
+          visibility,
+          uploadedBy: ctx.userId,
+        })
+        .returning();
+
+      return created({ document: doc });
+    }
+
+    const body = await request.json();
+    const parsed = uploadSchema.parse(body);
 
     await checkStorageLimit(ctx.organizationId, parsed.fileSize);
 
