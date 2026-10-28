@@ -185,7 +185,7 @@ export async function handleChargeSucceeded(
     throw new Error("Stripe integration accounts not configured");
   }
 
-  // Check if this charge's payment_intent already exists as a dubbl invoice payment
+  // Check if this charge's payment_intent already exists as an invoice payment
   if (charge.payment_intent) {
     const piId =
       typeof charge.payment_intent === "string"
@@ -1258,7 +1258,7 @@ export async function handleInvoicePaid(
   }
 
   // Create payment record if we have a contact, but skip if a payment already exists
-  // for this PI (e.g. created by checkout.session.completed for a Dubbl invoice)
+  // for this PI (e.g. created by checkout.session.completed for an invoice)
   if (contactId) {
     let paymentExists = false;
     if (invoicePIId) {
@@ -1921,7 +1921,7 @@ export async function handleStripeCreditNoteCreated(
       ),
     });
     if (invoiceMap) {
-      // The dubblEntityId points to a journal_entry, but we need the invoice ID
+      // The entity ID points to a journal_entry, but we need the invoice ID
       // Check if there's a linked invoice via the payment
       linkedInvoiceId = null; // We store the reference but don't force a link
     }

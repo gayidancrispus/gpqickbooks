@@ -667,15 +667,15 @@ function BandSheet({
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="space-y-2">
                   <Label>Min Salary</Label>
-                  <CurrencyInput prefix="$" value={newBand.minSalary} onChange={(v) => setNewBand({ ...newBand, minSalary: v })} />
+                  <CurrencyInput prefix="UGX " value={newBand.minSalary} onChange={(v) => setNewBand({ ...newBand, minSalary: v })} />
                 </div>
                 <div className="space-y-2">
                   <Label>Mid Salary</Label>
-                  <CurrencyInput prefix="$" value={newBand.midSalary} onChange={(v) => setNewBand({ ...newBand, midSalary: v })} />
+                  <CurrencyInput prefix="UGX " value={newBand.midSalary} onChange={(v) => setNewBand({ ...newBand, midSalary: v })} />
                 </div>
                 <div className="space-y-2">
                   <Label>Max Salary</Label>
-                  <CurrencyInput prefix="$" value={newBand.maxSalary} onChange={(v) => setNewBand({ ...newBand, maxSalary: v })} />
+                  <CurrencyInput prefix="UGX " value={newBand.maxSalary} onChange={(v) => setNewBand({ ...newBand, maxSalary: v })} />
                 </div>
               </div>
             </div>
@@ -739,7 +739,7 @@ function ReviewSheet({
               </div>
               <div className="space-y-2">
                 <Label>Budget</Label>
-                <CurrencyInput prefix="$" value={newReview.totalBudget} onChange={(v) => setNewReview({ ...newReview, totalBudget: v })} placeholder="Optional" />
+                <CurrencyInput prefix="UGX " value={newReview.totalBudget} onChange={(v) => setNewReview({ ...newReview, totalBudget: v })} placeholder="Optional" />
               </div>
             </div>
           </div>

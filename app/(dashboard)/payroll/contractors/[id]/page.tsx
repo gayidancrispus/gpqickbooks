@@ -238,7 +238,7 @@ export default function ContractorDetailPage() {
             </div>
             <div className="space-y-1.5">
               <Label className="text-xs">Hourly Rate</Label>
-              <CurrencyInput prefix="$" value={hourlyRate} onChange={setHourlyRate} />
+              <CurrencyInput prefix="UGX " value={hourlyRate} onChange={setHourlyRate} />
             </div>
             <div className="space-y-1.5">
               <Label className="text-xs">Bank Account</Label>
@@ -263,7 +263,7 @@ export default function ContractorDetailPage() {
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-4">
                 <div className="space-y-1">
                   <Label className="text-xs">Amount</Label>
-                  <CurrencyInput prefix="$" size="sm" value={paymentAmount} onChange={setPaymentAmount} />
+                  <CurrencyInput prefix="UGX " size="sm" value={paymentAmount} onChange={setPaymentAmount} />
                 </div>
                 <div className="space-y-1">
                   <Label className="text-xs">Currency</Label>

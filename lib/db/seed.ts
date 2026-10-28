@@ -129,7 +129,7 @@ const TAX_RATES = [
 ];
 
 async function seed() {
-  console.log("Seeding dubbl demo data...\n");
+  console.log("Seeding Goodison Park Properties demo data...\n");
 
   // 1. Currencies — upsert so codes are present and metadata stays correct.
   console.log("Seeding currencies...");
@@ -149,7 +149,7 @@ async function seed() {
 
   // Prefer the dev user's org first, then fall back to any owner membership
   const devUser = await db.query.users.findFirst({
-    where: eq(users.email, "dev@dubbl.local"),
+    where: eq(users.email, "dev@goodisonparkproperties.local"),
     columns: { id: true },
   });
 
@@ -182,7 +182,7 @@ async function seed() {
       .values({
         id: "00000000-0000-0000-0000-000000000001",
         name: "Demo User",
-        email: "demo@dubbl.dev",
+        email: "demo@goodisonparkproperties.com",
         passwordHash,
         isSiteAdmin: true,
       })

@@ -659,7 +659,7 @@ export default function PayrollRunDetailPage() {
                 <div className="space-y-2">
                   <Label>Amount</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={bonusForm.amount}
                     onChange={(v) => setBonusForm((f) => ({ ...f, amount: v }))}
                   />

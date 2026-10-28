@@ -260,7 +260,7 @@ export default function InventoryItemDetailsPage() {
               <Label className="text-xs" htmlFor="purchasePrice">What it costs you</Label>
               <CurrencyInput
                 id="purchasePrice"
-                prefix="$"
+                prefix="UGX "
                 value={invPurchasePrice}
                 onChange={setInvPurchasePrice}
               />
@@ -269,7 +269,7 @@ export default function InventoryItemDetailsPage() {
               <Label className="text-xs" htmlFor="salePrice">What you sell it for</Label>
               <CurrencyInput
                 id="salePrice"
-                prefix="$"
+                prefix="UGX "
                 value={invSalePrice}
                 onChange={setInvSalePrice}
               />
@@ -439,7 +439,7 @@ export default function InventoryItemDetailsPage() {
             <div className="space-y-2">
               <Label>New value</Label>
               <CurrencyInput
-                prefix="$"
+                prefix="UGX "
                 value={revalueValue}
                 onChange={setRevalueValue}
               />

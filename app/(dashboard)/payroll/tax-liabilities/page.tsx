@@ -454,7 +454,7 @@ export default function TaxLiabilitiesPage() {
               <CurrencyInput
                 value={formAmount}
                 onChange={setFormAmount}
-                prefix="$"
+                prefix="UGX "
               />
             </div>
 

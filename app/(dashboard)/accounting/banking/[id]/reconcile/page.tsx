@@ -621,7 +621,7 @@ export default function ReconcilePage() {
                 <div className="space-y-2">
                   <Label>Opening Balance</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={recForm.startBalance}
                     onChange={(v) =>
                       setRecForm({ ...recForm, startBalance: v })
@@ -632,7 +632,7 @@ export default function ReconcilePage() {
                 <div className="space-y-2">
                   <Label>Closing Balance</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={recForm.endBalance}
                     onChange={(v) =>
                       setRecForm({ ...recForm, endBalance: v })

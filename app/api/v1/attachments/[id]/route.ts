@@ -24,7 +24,7 @@ export async function GET(
       return NextResponse.json({ error: "Not found" }, { status: 404 });
     }
 
-    const downloadUrl = await getDownloadUrl(att.fileKey);
+    const downloadUrl = `/api/v1/attachments/${att.id}/file?orgId=${ctx.organizationId}`;
     return NextResponse.json({ attachment: att, downloadUrl });
   } catch (err) {
     if (err instanceof AuthError) {

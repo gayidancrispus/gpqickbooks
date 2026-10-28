@@ -241,7 +241,7 @@ export default function CreditNoteDetailPage() {
                 <div className="space-y-2">
                   <Label>Amount</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={applyAmount}
                     onChange={setApplyAmount}
                     placeholder={centsToDecimal(cn.amountRemaining)}

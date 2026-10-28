@@ -179,7 +179,7 @@ export default function InventoryItemVariantsPage() {
               <div className="space-y-1.5">
                 <Label className="text-xs">Purchase Price</Label>
                 <CurrencyInput
-                  prefix="$"
+                  prefix="UGX "
                   value={purchasePrice}
                   onChange={setPurchasePrice}
                 />
@@ -187,7 +187,7 @@ export default function InventoryItemVariantsPage() {
               <div className="space-y-1.5">
                 <Label className="text-xs">Sale Price</Label>
                 <CurrencyInput
-                  prefix="$"
+                  prefix="UGX "
                   value={salePrice}
                   onChange={setSalePrice}
                 />

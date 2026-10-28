@@ -47,24 +47,46 @@
   --radius-2xl: calc(var(--radius) + 8px);
   --radius-3xl: calc(var(--radius) + 12px);
   --radius-4xl: calc(var(--radius) + 16px);
-  --color-emerald-50: #ecfdf5;
-  --color-emerald-100: #d1fae5;
-  --color-emerald-200: #a7f3d0;
-  --color-emerald-300: #6ee7b7;
-  --color-emerald-400: #34d399;
-  --color-emerald-500: #10b981;
-  --color-emerald-600: #059669;
-  --color-emerald-700: #047857;
-  --color-emerald-800: #065f46;
-  --color-emerald-900: #064e3b;
-  --color-emerald-950: #022c22;
+  --color-emerald-50: #f0f9ff;
+  --color-emerald-100: #e0f2fe;
+  --color-emerald-200: #bae6fd;
+  --color-emerald-300: #7dd3fc;
+  --color-emerald-400: #38bdf8;
+  --color-emerald-500: #0ea5e9;
+  --color-emerald-600: #0284c7;
+  --color-emerald-700: #0369a1;
+  --color-emerald-800: #075985;
+  --color-emerald-900: #0c4a6e;
+  --color-emerald-950: #082f49;
+  --color-green-50: #f0f9ff;
+  --color-green-100: #e0f2fe;
+  --color-green-200: #bae6fd;
+  --color-green-300: #7dd3fc;
+  --color-green-400: #38bdf8;
+  --color-green-500: #0ea5e9;
+  --color-green-600: #0284c7;
+  --color-green-700: #0369a1;
+  --color-green-800: #075985;
+  --color-green-900: #0c4a6e;
+  --color-green-950: #082f49;
+  --color-teal-50: #f0f9ff;
+  --color-teal-100: #e0f2fe;
+  --color-teal-200: #bae6fd;
+  --color-teal-300: #7dd3fc;
+  --color-teal-400: #38bdf8;
+  --color-teal-500: #0ea5e9;
+  --color-teal-600: #0284c7;
+  --color-teal-700: #0369a1;
+  --color-teal-800: #075985;
+  --color-teal-900: #0c4a6e;
+  --color-teal-950: #082f49;
 }
 
 :root {
   /* Fumadocs theme */
   --color-fd-background: #ffffff;
   --color-fd-foreground: #0a0a0a;
-  --color-fd-primary: #059669;
+  --color-fd-primary: #0284c7;
   --color-fd-primary-foreground: #ffffff;
   --color-fd-secondary: #f5f5f5;
   --color-fd-secondary-foreground: #0a0a0a;
@@ -75,7 +97,7 @@
   --color-fd-card: #ffffff;
   --color-fd-card-foreground: #0a0a0a;
   --color-fd-border: #e5e5e5;
-  --color-fd-ring: #10b981;
+  --color-fd-ring: #38bdf8;
   --color-fd-popover: #ffffff;
   --color-fd-popover-foreground: #0a0a0a;
 
@@ -86,7 +108,7 @@
   --card-foreground: #0a0a0a;
   --popover: #ffffff;
   --popover-foreground: #0a0a0a;
-  --primary: #10b981;
+  --primary: #0284c7;
   --primary-foreground: #ffffff;
   --secondary: #f5f5f5;
   --secondary-foreground: #0a0a0a;
@@ -97,21 +119,21 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: #e5e5e5;
   --input: #e5e5e5;
-  --ring: #10b981;
-  --chart-1: #10b981;
-  --chart-2: #059669;
-  --chart-3: #047857;
-  --chart-4: #34d399;
-  --chart-5: #6ee7b7;
+  --ring: #38bdf8;
+  --chart-1: #0ea5e9;
+  --chart-2: #0284c7;
+  --chart-3: #0369a1;
+  --chart-4: #38bdf8;
+  --chart-5: #7dd3fc;
   --content-bg: #F7F7F5;
   --sidebar: #FFFFFF;
   --sidebar-foreground: #6B7280;
-  --sidebar-primary: #10b981;
+  --sidebar-primary: #0284c7;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #e5e7eb;
   --sidebar-accent-foreground: #111827;
   --sidebar-border: #E5E7EB;
-  --sidebar-ring: #10b981;
+  --sidebar-ring: #38bdf8;
 }
 
 @layer base {
@@ -242,12 +264,12 @@
   0%, 100% {
     opacity: 0.4;
     transform: scale(0.96);
-    filter: drop-shadow(0 0 0px rgba(16, 185, 129, 0));
+    filter: drop-shadow(0 0 0px rgba(14, 165, 233, 0));
   }
   50% {
     opacity: 1;
     transform: scale(1);
-    filter: drop-shadow(0 0 12px rgba(16, 185, 129, 0.2));
+    filter: drop-shadow(0 0 12px rgba(14, 165, 233, 0.25));
   }
 }
 
@@ -544,57 +566,57 @@
 /* Gradient mesh - dark mode */
 :is(.dark) .gradient-mesh {
   background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(16, 185, 129, 0.1), transparent),
-    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(20, 184, 166, 0.06), transparent),
-    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(16, 185, 129, 0.04), transparent);
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.12), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(56, 189, 248, 0.08), transparent),
+    radial-gradient(ellipse 40% 60% at 20% 80%, rgba(14, 165, 233, 0.05), transparent);
 }
 
 
 .dark {
   /* Fumadocs dark theme */
-  --color-fd-background: #0a0d0b;
-  --color-fd-foreground: #f0fdf4;
-  --color-fd-primary: #10b981;
-  --color-fd-primary-foreground: #ffffff;
-  --color-fd-secondary: #1a1f1c;
-  --color-fd-secondary-foreground: #f0fdf4;
-  --color-fd-accent: #1a1f1c;
-  --color-fd-accent-foreground: #f0fdf4;
-  --color-fd-muted: #1a1f1c;
+  --color-fd-background: #090d16;
+  --color-fd-foreground: #f0f9ff;
+  --color-fd-primary: #38bdf8;
+  --color-fd-primary-foreground: #082f49;
+  --color-fd-secondary: #131c2e;
+  --color-fd-secondary-foreground: #f0f9ff;
+  --color-fd-accent: #131c2e;
+  --color-fd-accent-foreground: #f0f9ff;
+  --color-fd-muted: #131c2e;
   --color-fd-muted-foreground: #94a3b8;
-  --color-fd-card: #111614;
-  --color-fd-card-foreground: #f0fdf4;
-  --color-fd-border: #2a2a2a;
-  --color-fd-ring: #10b981;
-  --color-fd-popover: #111614;
-  --color-fd-popover-foreground: #f0fdf4;
+  --color-fd-card: #0f172a;
+  --color-fd-card-foreground: #f0f9ff;
+  --color-fd-border: #1e293b;
+  --color-fd-ring: #38bdf8;
+  --color-fd-popover: #0f172a;
+  --color-fd-popover-foreground: #f0f9ff;
 
-  --background: #0a0d0b;
-  --foreground: #f0fdf4;
-  --card: #111614;
-  --card-foreground: #f0fdf4;
-  --popover: #111614;
-  --popover-foreground: #f0fdf4;
-  --primary: #10b981;
-  --primary-foreground: #ffffff;
-  --secondary: #1a1f1c;
-  --secondary-foreground: #f0fdf4;
-  --muted: #1a1f1c;
+  --background: #090d16;
+  --foreground: #f0f9ff;
+  --card: #0f172a;
+  --card-foreground: #f0f9ff;
+  --popover: #0f172a;
+  --popover-foreground: #f0f9ff;
+  --primary: #38bdf8;
+  --primary-foreground: #082f49;
+  --secondary: #131c2e;
+  --secondary-foreground: #f0f9ff;
+  --muted: #131c2e;
   --muted-foreground: #94a3b8;
-  --accent: #0d2818;
-  --accent-foreground: #d1fae5;
-  --border: #1e2a24;
-  --input: #1e2a24;
-  --ring: #10b981;
-  --content-bg: #0a0d0b;
-  --sidebar: #061210;
+  --accent: #0c2d48;
+  --accent-foreground: #bae6fd;
+  --border: #1e293b;
+  --input: #1e293b;
+  --ring: #38bdf8;
+  --content-bg: #090d16;
+  --sidebar: #0b1329;
   --sidebar-foreground: rgba(255,255,255,0.75);
-  --sidebar-primary: #10b981;
-  --sidebar-primary-foreground: #ffffff;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #082f49;
   --sidebar-accent: rgba(255,255,255,0.08);
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: rgba(255,255,255,0.06);
-  --sidebar-ring: #10b981;
+  --sidebar-ring: #38bdf8;
 }
 
 /* Fix Fumadocs TOC bleeding on mobile */

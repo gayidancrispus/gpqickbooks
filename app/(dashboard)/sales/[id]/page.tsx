@@ -766,7 +766,7 @@ export default function InvoiceDetailPage() {
                     <div className="space-y-2">
                       <Label>Amount</Label>
                       <CurrencyInput
-                        prefix="$"
+                        prefix="UGX "
                         value={payAmount}
                         onChange={setPayAmount}
                         placeholder={minorUnitsToDecimal(inv.amountDue, inv.currencyCode)}
@@ -843,7 +843,7 @@ export default function InvoiceDetailPage() {
                     <div className="space-y-2">
                       <Label>Custom amount (optional)</Label>
                       <CurrencyInput
-                        prefix="$"
+                        prefix="UGX "
                         value={interestAmount}
                         onChange={setInterestAmount}
                         placeholder="Use my interest rate"

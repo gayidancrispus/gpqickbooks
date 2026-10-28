@@ -241,7 +241,7 @@ export default function PaymentDetailPage() {
                 <div className="space-y-2">
                   <Label>Amount</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={applyAmount}
                     onChange={setApplyAmount}
                     placeholder={minorUnitsToDecimal(unallocated, cur)}

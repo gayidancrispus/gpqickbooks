@@ -18,9 +18,9 @@ interface CurrencyInputProps {
 export function CurrencyInput({
   value,
   onChange,
-  placeholder = "0.00",
+  placeholder = "0",
   className,
-  prefix,
+  prefix = "UGX ",
   size = "default",
   disabled,
   name,

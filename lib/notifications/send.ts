@@ -69,7 +69,7 @@ export async function sendNotification(params: SendNotificationParams) {
       if (user?.email) {
         const element = createElement(NotificationDigestEmail, {
           userName: user.name || "there",
-          orgName: "dubbl",
+          orgName: "Goodison Park Properties",
           notifications: [
             {
               type: params.type,
@@ -85,7 +85,7 @@ export async function sendNotification(params: SendNotificationParams) {
 
         await sendPlatformEmail({
           to: user.email,
-          subject: `dubbl: ${params.title}`,
+          subject: `Goodison Park Properties: ${params.title}`,
           html,
         });
       }

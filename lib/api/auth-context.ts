@@ -100,7 +100,15 @@ export async function getAuthContext(
     }
   }
 
-  const orgId = organizationId || request.headers.get("x-organization-id");
+  let queryOrgId: string | null = null;
+  try {
+    const url = new URL(request.url);
+    queryOrgId = url.searchParams.get("orgId") || url.searchParams.get("organizationId");
+  } catch {
+    // Ignore URL parse errors
+  }
+
+  const orgId = organizationId || request.headers.get("x-organization-id") || queryOrgId;
 
   // If no org ID provided, auto-resolve if user has exactly one membership
   if (!orgId) {

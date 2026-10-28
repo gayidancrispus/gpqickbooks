@@ -457,17 +457,17 @@ function ProjectDrawer({ open, onClose }: { open: boolean; onClose: () => void }
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="drawer-project-budget">Budget</Label>
-                  <CurrencyInput id="drawer-project-budget" name="budget" prefix="$" value={projectBudget} onChange={setProjectBudget} />
+                  <CurrencyInput id="drawer-project-budget" name="budget" prefix="UGX " value={projectBudget} onChange={setProjectBudget} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="drawer-project-rate">Hourly Rate</Label>
-                  <CurrencyInput id="drawer-project-rate" name="hourlyRate" prefix="$" value={projectHourlyRate} onChange={setProjectHourlyRate} />
+                  <CurrencyInput id="drawer-project-rate" name="hourlyRate" prefix="UGX " value={projectHourlyRate} onChange={setProjectHourlyRate} />
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label>Fixed Price</Label>
-                  <CurrencyInput name="fixedPrice" prefix="$" value={projectFixedPrice} onChange={setProjectFixedPrice} />
+                  <CurrencyInput name="fixedPrice" prefix="UGX " value={projectFixedPrice} onChange={setProjectFixedPrice} />
                 </div>
                 <div className="space-y-2">
                   <Label>Estimated Hours</Label>
@@ -1097,11 +1097,11 @@ function InventoryDrawer({ open, onClose }: { open: boolean; onClose: () => void
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="drawer-inv-purchase">Purchase Price</Label>
-                  <CurrencyInput id="drawer-inv-purchase" name="purchasePrice" prefix="$" value={invPurchasePrice} onChange={setInvPurchasePrice} />
+                  <CurrencyInput id="drawer-inv-purchase" name="purchasePrice" prefix="UGX " value={invPurchasePrice} onChange={setInvPurchasePrice} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="drawer-inv-sale">Sale Price</Label>
-                  <CurrencyInput id="drawer-inv-sale" name="salePrice" prefix="$" value={invSalePrice} onChange={setInvSalePrice} />
+                  <CurrencyInput id="drawer-inv-sale" name="salePrice" prefix="UGX " value={invSalePrice} onChange={setInvSalePrice} />
                 </div>
               </div>
             </div>
@@ -1753,14 +1753,14 @@ function ExpenseDrawer({ open, onClose }: { open: boolean; onClose: () => void }
                           </div>
                           <div className="space-y-2">
                             <Label>Rate per mile *</Label>
-                            <CurrencyInput prefix="$" value={item.mileageRate} onChange={(v) => updateItem(index, { mileageRate: v })} />
+                            <CurrencyInput prefix="UGX " value={item.mileageRate} onChange={(v) => updateItem(index, { mileageRate: v })} />
                           </div>
                         </>
                       ) : (
                         <>
                           <div className="space-y-2">
                             <Label>Amount *</Label>
-                            <CurrencyInput prefix="$" value={item.amount} onChange={(v) => updateItem(index, { amount: v })} />
+                            <CurrencyInput prefix="UGX " value={item.amount} onChange={(v) => updateItem(index, { amount: v })} />
                           </div>
                           <div className="space-y-2">
                             <Label>Category</Label>
@@ -1949,7 +1949,7 @@ function FixedAssetDrawer({ open, onClose }: { open: boolean; onClose: () => voi
                 </div>
                 <div className="space-y-2">
                   <Label>Purchase Price *</Label>
-                  <CurrencyInput prefix="$" value={purchasePrice} onChange={setPurchasePrice} placeholder="10000.00" />
+                  <CurrencyInput prefix="UGX " value={purchasePrice} onChange={setPurchasePrice} placeholder="10000.00" />
                 </div>
               </div>
             </div>
@@ -1961,7 +1961,7 @@ function FixedAssetDrawer({ open, onClose }: { open: boolean; onClose: () => voi
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="space-y-2">
                   <Label>Residual Value</Label>
-                  <CurrencyInput prefix="$" value={residualValue} onChange={setResidualValue} placeholder="500.00" />
+                  <CurrencyInput prefix="UGX " value={residualValue} onChange={setResidualValue} placeholder="500.00" />
                 </div>
                 <div className="space-y-2">
                   <Label>Useful Life (months)</Label>
@@ -2301,7 +2301,7 @@ function BudgetDrawer({ open, onClose }: { open: boolean; onClose: () => void })
                     <div className="flex items-center gap-3">
                       <Label className="text-xs text-muted-foreground shrink-0 w-16">Annual</Label>
                       <CurrencyInput
-                        prefix="$"
+                        prefix="UGX "
                         value={annualAmounts[i] ?? (line.total > 0 ? (line.total / 100).toFixed(2) : "")}
                         onChange={(v) => handleAnnualChange(i, v)}
                         placeholder="0.00"
@@ -2475,7 +2475,7 @@ function EmployeeDrawer({ open, onClose }: { open: boolean; onClose: () => void 
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label>Annual Salary *</Label>
-                  <CurrencyInput prefix="$" value={salary} onChange={setSalary} placeholder="75000.00" />
+                  <CurrencyInput prefix="UGX " value={salary} onChange={setSalary} placeholder="75000.00" />
                 </div>
                 <div className="space-y-2">
                   <Label>Pay Frequency</Label>
@@ -3709,7 +3709,7 @@ function ContractorDrawer({ open, onClose }: { open: boolean; onClose: () => voi
                 </div>
                 <div className="space-y-2">
                   <Label>Default Rate</Label>
-                  <CurrencyInput prefix="$" value={cRate} onChange={setCRate} placeholder="150.00" />
+                  <CurrencyInput prefix="UGX " value={cRate} onChange={setCRate} placeholder="150.00" />
                 </div>
                 <div className="space-y-2">
                   <Label>Currency</Label>
@@ -4176,7 +4176,7 @@ function CustomerCreditDrawer({ open, onClose }: { open: boolean; onClose: () =>
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="drawer-credit-amount">Amount</Label>
-                  <CurrencyInput id="drawer-credit-amount" prefix="$" value={amount} onChange={setAmount} />
+                  <CurrencyInput id="drawer-credit-amount" prefix="UGX " value={amount} onChange={setAmount} />
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -4337,7 +4337,7 @@ function LoanDrawer({ open, onClose }: { open: boolean; onClose: () => void }) {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="drawer-loan-principal">Loan amount</Label>
-                  <CurrencyInput id="drawer-loan-principal" prefix="$" value={principalAmount} onChange={setPrincipalAmount} />
+                  <CurrencyInput id="drawer-loan-principal" prefix="UGX " value={principalAmount} onChange={setPrincipalAmount} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="drawer-loan-rate">Interest rate (%)</Label>
@@ -4673,7 +4673,7 @@ function AccrualScheduleDrawer({ open, onClose }: { open: boolean; onClose: () =
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="drawer-accrual-amount">Total amount</Label>
-                  <CurrencyInput id="drawer-accrual-amount" prefix="$" value={totalAmount} onChange={setTotalAmount} />
+                  <CurrencyInput id="drawer-accrual-amount" prefix="UGX " value={totalAmount} onChange={setTotalAmount} />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="drawer-accrual-periods">Number of periods</Label>
@@ -4822,7 +4822,7 @@ function RevenueScheduleDrawer({ open, onClose }: { open: boolean; onClose: () =
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="drawer-revsched-amount">Total amount</Label>
-                  <CurrencyInput id="drawer-revsched-amount" prefix="$" value={totalAmount} onChange={setTotalAmount} />
+                  <CurrencyInput id="drawer-revsched-amount" prefix="UGX " value={totalAmount} onChange={setTotalAmount} />
                 </div>
                 <div className="space-y-2">
                   <Label>Method</Label>

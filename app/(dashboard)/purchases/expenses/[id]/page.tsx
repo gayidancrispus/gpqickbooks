@@ -133,11 +133,12 @@ function ReceiptViewer({ fileKey, fileName }: { fileKey: string; fileName: strin
   }, [fileKey, url]);
 
   const isImage = /\.(jpg|jpeg|png|gif|webp|bmp|svg)$/i.test(fileName);
+  const isPdf = /\.pdf$/i.test(fileName);
 
   return (
     <Dialog open={open} onOpenChange={(v) => { setOpen(v); if (v) loadUrl(); }}>
       <DialogTrigger asChild>
-        <button className="inline-flex items-center gap-1.5 text-emerald-600 hover:text-emerald-700 transition-colors group">
+        <button className="inline-flex items-center gap-1.5 text-sky-600 hover:text-sky-700 transition-colors group">
           {isImage ? <ImageIcon className="size-3.5" /> : <FileText className="size-3.5" />}
           <span className="max-w-[100px] truncate text-xs group-hover:underline">{fileName}</span>
         </button>
@@ -160,6 +161,10 @@ function ReceiptViewer({ fileKey, fileName }: { fileKey: string; fileName: strin
                 <div className="rounded-lg border overflow-hidden bg-muted/30">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={url} alt={fileName} className="w-full h-auto max-h-[60vh] object-contain" />
+                </div>
+              ) : isPdf ? (
+                <div className="rounded-lg border overflow-hidden bg-muted/30">
+                  <iframe src={url} className="w-full h-[60vh] border-0" title={fileName} />
                 </div>
               ) : (
                 <div className="flex flex-col items-center justify-center py-12 rounded-lg border bg-muted/30">
@@ -392,7 +397,7 @@ function EditExpenseDrawer({
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs">Amount *</Label>
-                        <CurrencyInput prefix="$" value={item.amount} onChange={(v) => updateEditItem(index, { amount: v })} />
+                        <CurrencyInput prefix="UGX " value={item.amount} onChange={(v) => updateEditItem(index, { amount: v })} />
                       </div>
                       <div className="space-y-2">
                         <Label className="text-xs">Category</Label>

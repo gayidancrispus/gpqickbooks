@@ -321,8 +321,10 @@ export default function DocumentsPage() {
     }
   }
 
-  const isPreviewable = useCallback((mimeType: string) => {
-    return mimeType.startsWith("image/") || mimeType === "application/pdf";
+  const isPreviewable = useCallback((mimeType?: string, fileName?: string) => {
+    if (mimeType?.startsWith("image/") || mimeType === "application/pdf") return true;
+    if (fileName && /\.(jpg|jpeg|png|gif|webp|svg|pdf)$/i.test(fileName)) return true;
+    return false;
   }, []);
 
   const openFileSheet = useCallback(async (doc: Doc) => {
@@ -330,7 +332,7 @@ export default function DocumentsPage() {
     setEditingName(false);
     setPreviewUrl(null);
 
-    if (isPreviewable(doc.mimeType)) {
+    if (isPreviewable(doc.mimeType, doc.fileName)) {
       setPreviewLoading(true);
       try {
         const orgId = localStorage.getItem("activeOrgId") || "";
@@ -945,10 +947,10 @@ export default function DocumentsPage() {
                       <div className="size-6 border-2 border-muted-foreground/20 border-t-muted-foreground rounded-full animate-spin" />
                       <p className="mt-3 text-[11px] text-muted-foreground">Loading preview...</p>
                     </div>
-                  ) : previewUrl && selectedDoc.mimeType.startsWith("image/") ? (
+                  ) : previewUrl && (selectedDoc.mimeType.startsWith("image/") || /\.(jpg|jpeg|png|gif|webp|svg)$/i.test(selectedDoc.fileName)) ? (
                     <button
                       onClick={() => window.open(previewUrl, "_blank")}
-                      className="rounded-xl border overflow-hidden bg-[repeating-conic-gradient(#80808015_0%_25%,transparent_0%_50%)] bg-[length:16px_16px] group/preview relative cursor-pointer"
+                      className="rounded-xl border overflow-hidden bg-[repeating-conic-gradient(#80808015_0%_25%,transparent_0%_50%)] bg-[length:16px_16px] group/preview relative cursor-pointer w-full text-center"
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
@@ -960,7 +962,7 @@ export default function DocumentsPage() {
                         <ExternalLink className="size-5 text-white opacity-0 group-hover/preview:opacity-100 transition-opacity" />
                       </div>
                     </button>
-                  ) : previewUrl && selectedDoc.mimeType === "application/pdf" ? (
+                  ) : previewUrl && (selectedDoc.mimeType === "application/pdf" || /\.pdf$/i.test(selectedDoc.fileName)) ? (
                     <div className="rounded-xl border overflow-hidden relative group/preview">
                       <iframe
                         src={previewUrl}

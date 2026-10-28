@@ -69,7 +69,7 @@ export default function AuthLayout({
           <Link href="/" className="inline-flex items-center gap-2">
             <Logo />
             <span className="text-lg font-bold tracking-tight text-foreground">
-              dubbl
+              Goodison Park Properties
             </span>
           </Link>
           <ThemeToggle />
@@ -86,8 +86,8 @@ export default function AuthLayout({
                 className="pointer-events-none !absolute !inset-0 !rounded-none"
                 width="100%"
                 height="100%"
-                colors={["#d1fae5", "#a7f3d0", "#6ee7b7", "#34d399", "#10b981", "#34d399", "#a7f3d0"]}
-                colorBack="#34d399"
+                colors={["#e0f2fe", "#bae6fd", "#7dd3fc", "#38bdf8", "#0ea5e9", "#38bdf8", "#bae6fd"]}
+                colorBack="#38bdf8"
                 softness={1}
                 intensity={0.8}
                 noise={0.9}
@@ -96,28 +96,12 @@ export default function AuthLayout({
                 speed={0.2}
               />
               <div className="relative flex flex-col items-center gap-1.5 py-8">
-                <svg
-                  viewBox="0 0 40 32"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-auto"
-                >
-                  <path
-                    d="M18 4h8a10 10 0 0 1 10 10v4a10 10 0 0 1-10 10h-8V4z"
-                    fill="white"
-                    fillOpacity="0.35"
-                  />
-                  <path
-                    d="M4 4h8a10 10 0 0 1 10 10v4a10 10 0 0 1-10 10H4V4z"
-                    fill="white"
-                    fillOpacity="0.9"
-                  />
-                </svg>
+                <Logo className="h-10 w-auto" />
                 <span className="text-lg font-bold tracking-tight text-white">
-                  dubbl
+                  Goodison Park Properties
                 </span>
                 <p className="text-xs text-white/60">
-                  Open source bookkeeping, done right
+                  Modern property management & bookkeeping
                 </p>
               </div>
             </div>
@@ -125,13 +109,13 @@ export default function AuthLayout({
             <div className="grid lg:grid-cols-[1.2fr_1fr]">
               {/* ---- Left: grain gradient showcase ---- */}
               <div className="relative hidden overflow-hidden border-r border-white/10 lg:block">
-                {/* Green grain gradient background */}
+                {/* Light blue grain gradient background */}
                 <GrainGradient
                   className="pointer-events-none !absolute !inset-0 !rounded-none"
                   width="100%"
                   height="100%"
-                  colors={["#d1fae5", "#a7f3d0", "#6ee7b7", "#34d399", "#10b981", "#34d399", "#a7f3d0"]}
-                  colorBack="#34d399"
+                  colors={["#e0f2fe", "#bae6fd", "#7dd3fc", "#38bdf8", "#0ea5e9", "#38bdf8", "#bae6fd"]}
+                  colorBack="#38bdf8"
                   softness={1}
                   intensity={0.8}
                   noise={0.9}
@@ -206,35 +190,19 @@ export default function AuthLayout({
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
                   >
-                    {/* Pulsing emerald glow */}
+                    {/* Pulsing light blue glow */}
                     <motion.div
-                      className="absolute -inset-10 rounded-full bg-emerald-400/20 blur-3xl"
+                      className="absolute -inset-10 rounded-full bg-sky-400/20 blur-3xl"
                       animate={{ opacity: [0.4, 0.7, 0.4], scale: [0.95, 1.05, 0.95] }}
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                     />
 
                     {/* Frosted card */}
-                    <div className="relative rounded-2xl border border-white/20 bg-white/10 px-10 py-8 shadow-2xl shadow-black/10 backdrop-blur-xl">
+                    <div className="relative rounded-2xl border border-white/20 bg-white/10 px-8 py-7 shadow-2xl shadow-black/10 backdrop-blur-xl">
                       <div className="flex flex-col items-center gap-3">
-                        <svg
-                          viewBox="0 0 40 32"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          className="h-10 w-auto"
-                        >
-                          <path
-                            d="M18 4h8a10 10 0 0 1 10 10v4a10 10 0 0 1-10 10h-8V4z"
-                            fill="white"
-                            fillOpacity="0.35"
-                          />
-                          <path
-                            d="M4 4h8a10 10 0 0 1 10 10v4a10 10 0 0 1-10 10H4V4z"
-                            fill="white"
-                            fillOpacity="0.9"
-                          />
-                        </svg>
-                        <span className="text-2xl font-bold tracking-tight text-white">
-                          dubbl
+                        <Logo className="h-12 w-auto" />
+                        <span className="text-xl font-bold tracking-tight text-white text-center">
+                          Goodison Park Properties
                         </span>
                       </div>
                     </div>

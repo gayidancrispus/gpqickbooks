@@ -56,14 +56,14 @@ export function OrgSwitcher() {
 
   const otherOrgs = orgs.filter((o) => o.id !== activeOrg?.id);
   const orgDisplayName = activeOrg?.name || activeOrg?.slug || "";
-  const orgInitial = (activeOrg?.name?.[0] || activeOrg?.slug?.[0] || "D").toUpperCase();
+  const orgInitial = (activeOrg?.name?.[0] || activeOrg?.slug?.[0] || "G").toUpperCase();
 
   return (
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button className="flex w-full items-center gap-2 rounded-lg border border-transparent px-2.5 py-2 text-left transition-colors hover:border-sidebar-border hover:bg-muted data-[state=open]:border-sidebar-border data-[state=open]:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring">
-            <div className="flex size-6 items-center justify-center rounded-md bg-emerald-600 text-[10px] font-semibold text-white">
+            <div className="flex size-6 items-center justify-center rounded-md bg-sky-600 text-[10px] font-semibold text-white">
               {orgInitial}
             </div>
             <span className="flex-1 truncate text-[13px] font-medium text-sidebar-accent-foreground">

@@ -473,7 +473,7 @@ export default function EmployeeDetailPage() {
             <div className="space-y-1.5">
               <Label className="text-xs">Annual Salary</Label>
               <CurrencyInput
-                prefix="$"
+                prefix="UGX "
                 value={salary}
                 onChange={setSalary}
               />
@@ -503,7 +503,7 @@ export default function EmployeeDetailPage() {
             {compensationType === "hourly" && (
               <div className="space-y-1.5">
                 <Label className="text-xs">Hourly Rate</Label>
-                <CurrencyInput prefix="$" value={hourlyRate} onChange={setHourlyRate} />
+                <CurrencyInput prefix="UGX " value={hourlyRate} onChange={setHourlyRate} />
               </div>
             )}
             <div className="space-y-1.5">
@@ -642,7 +642,7 @@ export default function EmployeeDetailPage() {
                 <div className="space-y-1.5">
                   <Label className="text-xs">Additional Federal Withholding</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={tcAddlFederal}
                     onChange={setTcAddlFederal}
                   />
@@ -650,7 +650,7 @@ export default function EmployeeDetailPage() {
                 <div className="space-y-1.5">
                   <Label className="text-xs">Additional State Withholding</Label>
                   <CurrencyInput
-                    prefix="$"
+                    prefix="UGX "
                     value={tcAddlState}
                     onChange={setTcAddlState}
                   />

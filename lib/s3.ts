@@ -14,7 +14,7 @@ const s3Region = process.env.S3_REGION || "us-east-1";
 const s3Endpoint = process.env.S3_ENDPOINT || undefined;
 const s3AccessKey = process.env.S3_ACCESS_KEY_ID;
 const s3SecretKey = process.env.S3_SECRET_ACCESS_KEY;
-export const bucket = process.env.S3_BUCKET || "dubbl";
+export const bucket = process.env.S3_BUCKET || "goodison";
 
 export const s3 = new S3Client({
   region: s3Region,
@@ -77,7 +77,12 @@ async function getLocalFile(key: string): Promise<Buffer | null> {
     const fullPath = path.join(LOCAL_STORAGE_DIR, key);
     return await fs.readFile(fullPath);
   } catch {
-    return null;
+    try {
+      const fallbackPath = path.join(process.cwd(), ".storage", "dubbl", key);
+      return await fs.readFile(fallbackPath);
+    } catch {
+      return null;
+    }
   }
 }
 

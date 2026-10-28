@@ -37,12 +37,12 @@ export function EmailLayout({ preview, children, unsubscribeUrl }: LayoutProps) 
                     src={`${APP_URL}/logo.png`}
                     width="32"
                     height="26"
-                    alt="dubbl"
+                    alt="Goodison Park Properties"
                     style={{ display: "block" }}
                   />
                 </td>
                 <td style={{ verticalAlign: "middle" }}>
-                  <Text style={logoText}>dubbl</Text>
+                  <Text style={logoText}>Goodison Park Properties</Text>
                 </td>
               </tr>
             </table>
@@ -71,10 +71,7 @@ export function EmailLayout({ preview, children, unsubscribeUrl }: LayoutProps) 
               )}
             </Text>
             <Text style={companyText}>
-              Mindroot Ltd · Company No. 16543299
-            </Text>
-            <Text style={companyText}>
-              Registered in England and Wales · 71-75 Shelton Street, London, WC2H 9JQ
+              Goodison Park Properties
             </Text>
           </Section>
         </Container>
@@ -109,7 +106,7 @@ const logoSection: React.CSSProperties = {
 const logoText: React.CSSProperties = {
   fontSize: "22px",
   fontWeight: 800,
-  color: "#059669",
+  color: "#0284c7",
   margin: 0,
   letterSpacing: "-0.5px",
   lineHeight: "26px",

@@ -40,7 +40,7 @@ export async function GET(
     return new NextResponse(jsonStr, {
       headers: {
         "Content-Type": "application/json",
-        "Content-Disposition": `attachment; filename=dubbl-backup-${backup.id}.json`,
+        "Content-Disposition": `attachment; filename=goodison-backup-${backup.id}.json`,
       },
     });
   } catch (err) {

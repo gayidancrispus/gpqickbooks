@@ -372,7 +372,7 @@ export default function AnalyticsPage() {
               <div className="space-y-1">
                 <Label className="text-xs">Avg New Hire Salary</Label>
                 <CurrencyInput
-                  prefix="$"
+                  prefix="UGX "
                   size="sm"
                   value={avgHireSalary}
                   onChange={setAvgHireSalary}

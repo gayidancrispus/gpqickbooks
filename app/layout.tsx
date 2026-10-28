@@ -22,18 +22,18 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://dubbl.dev";
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "https://goodisonparkproperties.com";
 
 export const metadata: Metadata = {
   title: {
-    default: "dubbl · Open-Source Accounting, ERP & Business Management",
-    template: "%s · dubbl",
+    default: "Goodison Park Properties · Accounting, ERP & Business Management",
+    template: "%s · Goodison Park Properties",
   },
   description:
-    "Free, open-source double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM. Self-host or use our cloud. API-first, MCP-ready, Apache 2.0.",
+    "Modern property management and double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM. API-first, MCP-ready.",
   metadataBase: new URL(APP_URL),
   keywords: [
-    "open source accounting",
+    "property management",
     "double-entry bookkeeping",
     "invoicing software",
     "accounts payable",
@@ -44,41 +44,39 @@ export const metadata: Metadata = {
     "inventory management",
     "project management",
     "CRM",
-    "self-hosted accounting",
     "API-first accounting",
-    "small business accounting",
-    "free accounting software",
+    "business management",
   ],
-  authors: [{ name: "dubbl", url: APP_URL }],
-  creator: "dubbl",
+  authors: [{ name: "Goodison Park Properties", url: APP_URL }],
+  creator: "Goodison Park Properties",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: APP_URL,
-    siteName: "dubbl",
-    title: "dubbl · Open-Source Accounting & Business Management",
+    siteName: "Goodison Park Properties",
+    title: "Goodison Park Properties · Accounting & Business Management",
     description:
-      "Free, open-source double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM. Self-host or use our cloud.",
+      "Modern property management and double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM.",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "dubbl - Open-source accounting for modern teams",
+        alt: "Goodison Park Properties - Business Management Platform",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "dubbl · Open-Source Accounting & Business Management",
+    title: "Goodison Park Properties · Accounting & Business Management",
     description:
-      "Free, open-source double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM. Self-host or use our cloud.",
+      "Modern property management and double-entry accounting with invoicing, bills, payroll, inventory, projects, and CRM.",
     images: [
       {
         url: "/og.jpg",
         width: 1200,
         height: 630,
-        alt: "dubbl - Open-source accounting for modern teams",
+        alt: "Goodison Park Properties - Business Management Platform",
       },
     ],
   },
@@ -108,7 +106,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
-        <meta name="apple-mobile-web-app-title" content="Dubbl" />
+        <meta name="apple-mobile-web-app-title" content="Goodison Park Properties" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} font-sans antialiased`}

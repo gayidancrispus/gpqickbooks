@@ -30,7 +30,7 @@ export async function POST(
     const testPayload = {
       event: "test",
       data: {
-        message: "This is a test webhook delivery from dubbl",
+        message: "This is a test webhook delivery from Goodison Park Properties",
         webhookId: found.id,
         timestamp: new Date().toISOString(),
       },
